@@ -3,7 +3,7 @@ $white: darken(white, 10%);
 
 h1 {
     letter-spacing: 0.3rem;
-    font-size: 5rem;
+    font-size: 3rem;
     margin-bottom: 0;
     text-align: center;
 
@@ -33,7 +33,6 @@ em {
 }
 
 .scoundrel-grid {
-    max-width: 55%;
     min-height: 100vh;
     display: grid;
     grid-gap: 1rem;
@@ -70,5 +69,33 @@ em {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .scoundrel-grid  {
+        max-width: 53%;
+        margin: auto;
+    }
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    h1 {
+        font-size: 4.5rem;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    h1 {
+        font-size: 4.8rem;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    h1 {
+        font-size: 5rem;
     }
 }
