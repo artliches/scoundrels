@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ALIAS, BUILD, DISTINGUISH, GOALS, HERITAGE, INTERESTS, LOOK, METHOD, NAMES_FIRST, NAMES_LAST, PROFESSION, PRONOUNS_FIRST, PRONOUNS_LAST, SKIN_TONE, STYLES, TRAITS, TYCHEROSI } from '../assets/descriptions.constants';
+import { ALIAS, BUILD, DISTINGUISH, GOALS, HERITAGE, INTERESTS, LOOK, METHOD, NAMES_FIRST, NAMES_LAST, PROFESSION, PRONOUNS_FIRST, PRONOUNS_LAST, QUIRKS, SKIN_TONE, STYLES, TRAITS, TYCHEROSI } from '../assets/descriptions.constants';
 import { RandomNumberService } from '../_services/random-number.service';
 import { LowerCasePipe } from '@angular/common';
 
@@ -81,6 +81,11 @@ export class AppComponent implements OnInit {
     prevValue: -1,
   };
 
+  quirksObj = {
+    descrip: '',
+    prevValue: -1,
+  };
+
   skinObj = {
     descrip: '',
     prevValue: -1,
@@ -122,6 +127,7 @@ export class AppComponent implements OnInit {
     this.rerollGoals();
     this.rerollMethods();
     this.rerollInterests();
+    this.rerollQuirks();
   }
 
   rerollAlias() {
@@ -204,6 +210,12 @@ export class AppComponent implements OnInit {
     const randNum = this.getRandomNum(PRONOUNS_LAST, this.firstPronounsObj);
     this.lastPronounsObj.descrip = PRONOUNS_LAST[randNum];
     this.lastPronounsObj.prevValue = randNum;
+  }
+
+  rerollQuirks() {
+    const randNum = this.getRandomNum(QUIRKS, this.quirksObj);
+    this.quirksObj.descrip = QUIRKS[randNum];
+    this.quirksObj.prevValue = randNum;
   }
 
   rerollSkin() {

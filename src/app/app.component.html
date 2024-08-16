@@ -49,7 +49,7 @@
     <h2><em>profession, goals, & methods</em></h2>
     <div class="border-top">
       {{ firstNameObj.descrip }} is gainfully employed as {{ professionObj.descrip.match('^[aieoAIEO].*') ? 'an' : 'a' }} <strong class="clickable" (click)="rerollProfession()">{{ professionObj.descrip }}</strong> and yearns <strong class="clickable" (click)="rerollGoals()">{{ firstPronounsObj.descrip !== 'They' ? goalsObj.descrip.replace('their', firstPronounsObj.descrip === 'He' ? 'his' : 'her') : goalsObj.descrip }}</strong>.
-      {{ firstPronounsObj.descrip }} often resorts to <strong class="clickable" (click)="rerollMethods()">{{ firstPronounsObj.descrip !== 'They' ? methodsObj.descrip.replace('their', firstPronounsObj.descrip === 'He' ? 'his' : 'her') : methodsObj.descrip }}</strong> in order to further that goal.
+      {{ firstPronounsObj.descrip }} often {{ firstPronounsObj.descrip !== 'They' ? 'resorts' : 'resort' }} to <strong class="clickable" (click)="rerollMethods()">{{ firstPronounsObj.descrip !== 'They' ? methodsObj.descrip.replace('their', firstPronounsObj.descrip === 'He' ? 'his' : 'her') : methodsObj.descrip }}</strong> in order to further that goal.
     </div>
   </section>
 
@@ -57,6 +57,7 @@
     <h2><em>intersts & quirks</em></h2>
     <div class="border-top">
       During {{firstPronounsObj.descrip === 'They' ? 'their' : firstPronounsObj.descrip === 'He' ? 'his' : 'her' }} downtime {{ firstPronounsObj.descrip | lowercase }} often {{ firstPronounsObj.descrip === 'They' ? 'enjoy' : 'enjoys' }} <strong class="clickable" (click)="rerollInterests()">{{ firstPronounsObj.descrip !== 'They' ? interestObj.descrip.replace('their', firstPronounsObj.descrip === 'He' ? 'his' : 'her') : interestObj.descrip }}</strong>.
+      A quirk that sets them apart from the rest of the people of Doskvol is <strong class="clickable" (click)="rerollQuirks()">{{ firstPronounsObj.descrip !== 'They' ? quirksObj.descrip.replace('their', firstPronounsObj.descrip === 'He' ? 'his' : 'her') : quirksObj.descrip }}</strong>.
     </div>
   </section>
 </div>
