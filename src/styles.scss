@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "Alegreya";
+    src: local("Alegreya"), url(./assets/fonts/Alegreya.ttf) format('opentype');
+    font-weight: 100 1000;
+}
+
+@font-face {
+    font-family: "Roboto Mono";
+    src: local("Roboto Mono"), url(./assets/fonts/RobotoMono-VariableFont_wght.ttf) format('opentype');
+    font-weight: 100 1000;
+}
+
+@font-face {
+    font-family: "CATS Goth";
+    src: local("CATSchmalfetteThannhaeuser"), url(./assets/fonts/CATSchmalfetteThannhaeuser.ttf) format('opentype');
+    font-weight: 100 1000;
+}
+
+@font-face {
+    font-family: "Kristy";
+    src: local("Kristy"), url(./assets/fonts/Kristy.otf) format('opentype');
+    font-weight: 100 1000;
+}
+
+body {
+    background-color: black;
+    color: darken(white, 10%);
+    font-family: "Alegreya", sans-serif;
+}
+
+.rotate-arrow {
+    font-family: "Roboto Mono";
+    writing-mode: vertical-lr;
+}
