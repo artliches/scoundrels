@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ALIAS, BUILD, DISTINGUISH, GOALS, HERITAGE, LOOK, METHOD, NAMES_FIRST, NAMES_LAST, PROFESSION, PRONOUNS_FIRST, PRONOUNS_LAST, SKIN_TONE, STYLES, TRAITS, TYCHEROSI } from '../assets/descriptions.constants';
+import { ALIAS, BUILD, DISTINGUISH, GOALS, HERITAGE, INTERESTS, LOOK, METHOD, NAMES_FIRST, NAMES_LAST, PROFESSION, PRONOUNS_FIRST, PRONOUNS_LAST, SKIN_TONE, STYLES, TRAITS, TYCHEROSI } from '../assets/descriptions.constants';
 import { RandomNumberService } from '../_services/random-number.service';
 import { LowerCasePipe } from '@angular/common';
 
@@ -52,6 +52,11 @@ export class AppComponent implements OnInit {
   };
 
   firstPronounsObj = {
+    descrip: '',
+    prevValue: -1,
+  };
+
+  interestObj = {
     descrip: '',
     prevValue: -1,
   };
@@ -116,6 +121,7 @@ export class AppComponent implements OnInit {
     this.rerollProfession();
     this.rerollGoals();
     this.rerollMethods();
+    this.rerollInterests();
   }
 
   rerollAlias() {
@@ -156,6 +162,12 @@ export class AppComponent implements OnInit {
     if (this.heritageObj.descrip === 'Tycheros') {
       this.rerollTycherosiDistinguish();
     }
+  }
+
+  rerollInterests() {
+    const randNum = this.getRandomNum(INTERESTS, this.interestObj);
+    this.interestObj.descrip = INTERESTS[randNum];
+    this.interestObj.prevValue = randNum;
   }
 
   rerollLastName() {
