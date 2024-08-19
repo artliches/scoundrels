@@ -4,60 +4,67 @@
     <em><span class="rotate-arrow">&#8626;</span>randomized NPCs compatible with <span class="kristy-font">BLADES IN THE DARK</span></em>
   </header>
   
-  <div class="content-info-section">
+  <div id="reroll" class="content-info-section">
     <strong class="clickable center-text" (click)="rerollAll()">SOME NEW SCOUNDREL SLITHERS</strong>
     <em><span class="rotate-arrow">&#8626;</span>click to re-roll all</em>
   </div>
   
-  <section>
+  <section id="identity">
     <h2><em>identity</em></h2>
-    <div class="border-top">
+    <div #identityClip class="border-top">
       From the filthy streets of Doskvol,
-      <strong class="clickable" (click)="rerollFirstName()">{{ firstNameObj.descrip }}</strong>
-      <strong class="clickable left-margin" (click)="rerollLastName()">{{ lastNameObj.descrip }}</strong>
+      <strong class="clickable" (click)="rerollFirstName()">{{ firstNameObj.descrip }}</strong> 
+      <strong class="clickable left-margin" (click)="rerollLastName()">{{ ' ' + lastNameObj.descrip }}</strong>
       ( <strong class="clickable" (click)="rerollFirstPronouns()">{{ firstPronounsObj.descrip }}</strong>/<strong class="clickable" (click)="rerollLastPronouns()">{{ lastPronounsObj.descrip}}</strong> )
           aka <strong class="clickable" (click)="rerollAlias()">{{ aliasObj.descrip }}</strong>
       approaches.
     </div>
   </section>
 
-  <section>
+  <section id="looks">
     <h2><em>looks</em></h2>
-    <div class="border-top flex-column">
+    <div #looksClip class="border-top flex-column">
       <div>
         {{ firstPronounsObj.descrip }} {{ firstPronounsObj.descrip === 'They' ? 'appear' : 'appears'}}
-        to be {{ lookObj.descrip === 'ambiguous' || lookObj.descrip === 'concealed' ? '' : 'a' }}
+        to be {{ lookObj.descrip === 'ambiguous' || lookObj.descrip === 'concealed' ? '' : adjustArticle(traitsObj.descrip) }}
         <strong class="clickable" (click)="rerollTraits()">{{ traitsObj.descrip }}</strong>
         @if (lookObj.descrip === 'ambiguous' || lookObj.descrip === 'concealed') {
           and
         }
-        <strong class="clickable" (click)="rerollLook()">{{ lookObj.descrip }}</strong>.
+        <strong class="clickable" (click)="rerollLook()">{{ ' ' + lookObj.descrip }}</strong>.
         {{ firstPronounsObj.descrip }} {{ firstPronounsObj.descrip === 'They' ? 'hail' : 'hails'}} from
         <strong class="clickable" (click)="rerollHeritage()">{{ heritageObj.descrip }}</strong>, and {{ firstPronounsObj.descrip | lowercase }} {{ firstPronounsObj.descrip === 'They' ? 'have' : 'has' }} <strong class="clickable" (click)="rerollSkin()">{{ skinObj.descrip }}</strong> skin
-        and a <strong class="clickable" (click)="rerollBuild()">{{ buildObj.descrip }}</strong> build. {{ firstPronounsObj.descrip === 'They' ? 'Their' : firstPronounsObj.descrip === 'He' ? 'His' : 'Her' }} most distinguishing {{ heritageObj.descrip === 'Tycheros' ? 'features are' : 'feature is' }} <strong class="clickable" (click)="rerollDistinguish()"> {{ firstPronounsObj.descrip !== 'They' ? distinguishObj.descrip.replace('their', firstPronounsObj.descrip === 'He' ? 'his' : 'her') : distinguishObj.descrip }}</strong>
+        and a <strong class="clickable" (click)="rerollBuild()">{{ buildObj.descrip }}</strong> build. {{ firstPronounsObj.descrip === 'They' ? 'Their' : firstPronounsObj.descrip === 'He' ? 'His' : 'Her' }} most distinguishing {{ heritageObj.descrip === 'Tycheros' ? 'features are' : 'feature is' }} <strong class="clickable" (click)="rerollDistinguish()"> {{ fixGenders(distinguishObj.descrip) }}</strong>
         @if (heritageObj.descrip === 'Tycheros') {
           and {{ firstPronounsObj.descrip === 'They' ? 'their' : firstPronounsObj.descrip === 'He' ? 'his' : 'her' }} <strong class="clickable" (click)="rerollTycherosiDistinguish()">{{ tycherosiObj.descrip }}</strong>
         }.
       </div>
       <div>
-        {{ firstPronounsObj.descrip }} {{ firstPronounsObj.descrip === 'They' ? 'are' : 'is' }} currently sporting {{ stylesObj.descrip.match('^[aieoAIEO].*') ? 'an' : 'a' }} <strong class="clickable" (click)="rerollStyles()">{{ stylesObj.descrip | lowercase }}</strong>.
+        {{ firstPronounsObj.descrip }} {{ firstPronounsObj.descrip === 'They' ? 'are' : 'is' }} currently sporting {{ adjustArticle(stylesObj.descrip) }} <strong class="clickable" (click)="rerollStyles()">{{ fixGenders(stylesObj.descrip) | lowercase }}</strong>.
       </div>
     </div>
   </section>
 
-  <section>
+  <section id="goals">
     <h2><em>profession, goals, & methods</em></h2>
-    <div class="border-top">
-      {{ firstNameObj.descrip }} is gainfully employed as {{ professionObj.descrip.match('^[aieoAIEO].*') ? 'an' : 'a' }} <strong class="clickable" (click)="rerollProfession()">{{ professionObj.descrip }}</strong> and yearns <strong class="clickable" (click)="rerollGoals()">{{ firstPronounsObj.descrip !== 'They' ? goalsObj.descrip.replace('their', firstPronounsObj.descrip === 'He' ? 'his' : 'her') : goalsObj.descrip }}</strong>.
-      {{ firstPronounsObj.descrip }} often {{ firstPronounsObj.descrip !== 'They' ? 'resorts' : 'resort' }} to <strong class="clickable" (click)="rerollMethods()">{{ firstPronounsObj.descrip !== 'They' ? methodsObj.descrip.replace('their', firstPronounsObj.descrip === 'He' ? 'his' : 'her') : methodsObj.descrip }}</strong> in order to further that goal.
+    <div #goalsClip class="border-top">
+      {{ firstNameObj.descrip }} is gainfully employed as {{ professionObj.descrip.match('^[aieoAIEO].*') ? 'an' : 'a' }} <strong class="clickable" (click)="rerollProfession()">{{ professionObj.descrip }}</strong> and yearns <strong class="clickable" (click)="rerollGoals()">{{ fixGenders(goalsObj.descrip) }}</strong>.
+      {{ firstPronounsObj.descrip }} often {{ firstPronounsObj.descrip !== 'They' ? 'resorts' : 'resort' }} to <strong class="clickable" (click)="rerollMethods()">{{ fixGenders(methodsObj.descrip) }}</strong> in order to further that goal.
     </div>
   </section>
 
-  <section>
+  <section id="quirks">
     <h2><em>intersts & quirks</em></h2>
-    <div class="border-top">
+    <div #quirksClip class="border-top">
       During {{firstPronounsObj.descrip === 'They' ? 'their' : firstPronounsObj.descrip === 'He' ? 'his' : 'her' }} downtime {{ firstPronounsObj.descrip | lowercase }} often {{ firstPronounsObj.descrip === 'They' ? 'enjoy' : 'enjoys' }} <strong class="clickable" (click)="rerollInterests()">{{ firstPronounsObj.descrip !== 'They' ? interestObj.descrip.replace('their', firstPronounsObj.descrip === 'He' ? 'his' : 'her') : interestObj.descrip }}</strong>.
-      A quirk that sets them apart from the rest of the people of Doskvol is <strong class="clickable" (click)="rerollQuirks()">{{ firstPronounsObj.descrip !== 'They' ? quirksObj.descrip.replace('their', firstPronounsObj.descrip === 'He' ? 'his' : 'her') : quirksObj.descrip }}</strong>.
+      A quirk that sets {{ firstPronounsObj.descrip === 'They' ? 'them' : firstPronounsObj.descrip === 'He' ? 'him' : 'her' }} apart from the rest of the people of Doskvol is <strong class="clickable" (click)="rerollQuirks()">{{ fixGenders(quirksObj.descrip) }}</strong>.
     </div>
   </section>
+
+  <section class="flex-column" id="credits">
+    <strong class="clickable center-text" (click)="copyToClipboard()">{{ copied ? 'COPIED TO CLIPBOARD' : 'COPY TO CLIPBOARD?' }}</strong>
+    <span>WHAT SCOUNDREL LURCHES v1.0 is an independent production by <strong><a href='https://twitter.com/codeLiches' target="_blank">&#64;codeLiches</a></strong> and is not affliated with One Seven Design or John Harper.</span>
+    <span>This work is based on <strong><a href="http://www.bladesinthedark.com/">Blades in the Dark</a></strong>, product of One Seven Design, developed and authored by John Harper, and licensed for our use under the <strong><a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported</a></strong> license.</span>
+  </section>
 </div>
+

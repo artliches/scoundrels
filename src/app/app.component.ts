@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ALIAS, BUILD, DISTINGUISH, GOALS, HERITAGE, INTERESTS, LOOK, METHOD, NAMES_FIRST, NAMES_LAST, PROFESSION, PRONOUNS_FIRST, PRONOUNS_LAST, QUIRKS, SKIN_TONE, STYLES, TRAITS, TYCHEROSI } from '../assets/descriptions.constants';
 import { RandomNumberService } from '../_services/random-number.service';
@@ -15,6 +15,9 @@ export class AppComponent implements OnInit {
   constructor(
     private randomNumber: RandomNumberService,
   ) {}
+
+  clipboard: any = '';
+  copied: boolean = false;
 
   aliasObj = {
     descrip: '',
@@ -106,11 +109,18 @@ export class AppComponent implements OnInit {
     prevValue: -1,
   };
 
+  @ViewChild('identityClip') identityClip: any;
+  @ViewChild('looksClip') looksClip: any;
+  @ViewChild('goalsClip') goalsClip: any;
+  @ViewChild('quirksClip') quirksClip: any;
+
+
   ngOnInit(): void {
     this.rerollAll();
   }
 
   rerollAll() {
+    this.copied = false;
     this.rerollFirstName();
     this.rerollLastName();
     this.rerollAlias();
@@ -240,6 +250,33 @@ export class AppComponent implements OnInit {
     const randNum = this.getRandomNum(TYCHEROSI, this.tycherosiObj);
     this.tycherosiObj.descrip = TYCHEROSI[randNum];
     this.tycherosiObj.prevValue = randNum;
+  }
+
+  adjustArticle(nextWord: string) {
+    const articleToReturn = nextWord.match('^[aieoAIEO].*') ? 'an' : 'a';
+    return articleToReturn;
+  }
+
+  copyToClipboard() {
+    this.clipboard = 
+      this.identityClip.nativeElement.innerText +
+      this.looksClip.nativeElement.innerText +
+      this.goalsClip.nativeElement.innerText +
+      this.quirksClip.nativeElement.innerText;
+
+    navigator.clipboard.writeText(this.clipboard);
+    this.copied = true;
+  }
+
+  fixGenders(stringToReplace: string): string {
+    if (this.firstPronounsObj.descrip === 'They') {
+      return stringToReplace;
+    }
+    let stringToReturn = stringToReplace;
+    stringToReturn = stringToReturn.replace(/(their)/g, this.firstPronounsObj.descrip === 'He' ? 'his' : 'her');
+    stringToReturn = stringToReturn.replace('them', this.firstPronounsObj.descrip === 'He' ? 'him' : 'her');
+    stringToReturn = stringToReturn.replace('they have', `${this.firstPronounsObj.descrip.toLowerCase()} has`);
+    return stringToReturn;
   }
 
   private getRandomNum(array: Array<any>, infoObj: {descrip: string, prevValue: number}) {
