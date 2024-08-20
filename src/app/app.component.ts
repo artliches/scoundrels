@@ -2,20 +2,23 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ALIAS, BUILD, DISTINGUISH, GOALS, HERITAGE, INTERESTS, LOOK, METHOD, NAMES_FIRST, NAMES_LAST, PROFESSION, PRONOUNS_FIRST, PRONOUNS_LAST, QUIRKS, SKIN_TONE, STYLES, TRAITS, TYCHEROSI } from '../assets/descriptions.constants';
 import { RandomNumberService } from '../_services/random-number.service';
-import { LowerCasePipe } from '@angular/common';
+import { LowerCasePipe, TitleCasePipe } from '@angular/common';
+import { ThemeService } from '../_services/theme.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LowerCasePipe],
+  imports: [RouterOutlet, LowerCasePipe, TitleCasePipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
   constructor(
     private randomNumber: RandomNumberService,
+    private theme: ThemeService,
   ) {}
 
+  whatTheme: string = 'dusk';
   clipboard: any = '';
   copied: boolean = false;
 
@@ -277,6 +280,20 @@ export class AppComponent implements OnInit {
     stringToReturn = stringToReturn.replace('them', this.firstPronounsObj.descrip === 'He' ? 'him' : 'her');
     stringToReturn = stringToReturn.replace('they have', `${this.firstPronounsObj.descrip.toLowerCase()} has`);
     return stringToReturn;
+  }
+
+  swapTheme() {
+    this.theme.updateTheme();
+    this.theme.currentTheme.subscribe(theme => {
+      this.whatTheme = theme;
+      if (theme === 'pale') {
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = '#0d0d0d';
+      } else {
+        document.body.style.backgroundColor = 'black';
+        document.body.style.color = '#e6e6e6';
+      }
+    });
   }
 
   private getRandomNum(array: Array<any>, infoObj: {descrip: string, prevValue: number}) {

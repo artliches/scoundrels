@@ -350,6 +350,13 @@ export const TYCHEROSI = [
     'rows of sharp teeth',
     'cat-like ears',
     'dog-like ears',
+    'crown of ten ivory horns',
+    'curling black ram horns',
+    'jagged, glowing lightning shaped horns',
+    'single, pearlescent spiraling horn',
+    'thick, crimson upward facing horns',
+    'sharp, metallic forward facing horns',
+    'sophisticated, glossy swept-back horns'
 ];
 
 export const TRAITS = [
