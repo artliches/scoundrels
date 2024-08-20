@@ -11,19 +11,13 @@
 }
 
 @font-face {
-    font-family: "CATS Goth";
-    src: local("CATSchmalfetteThannhaeuser"), url(./assets/fonts/CATSchmalfetteThannhaeuser.ttf) format('opentype');
-    font-weight: 100 1000;
-}
-
-@font-face {
     font-family: "Kristy";
     src: local("Kristy"), url(./assets/fonts/Kristy.otf) format('opentype');
     font-weight: 100 1000;
 }
 
 body {
-    background-color: black;
+    background-color: lighten(black, 5%);
     color: darken(white, 10%);
     font-family: "Alegreya", sans-serif;
 }
