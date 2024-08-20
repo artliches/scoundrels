@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1724098548067,
+  "timestamp": 1724161557534,
   "index": "/scoundrels/index.csr.html",
   "assetGroups": [
     {
@@ -16,7 +16,7 @@
         "/scoundrels/main-QU4U6I2T.js",
         "/scoundrels/manifest.webmanifest",
         "/scoundrels/polyfills-SCHOHYNV.js",
-        "/scoundrels/styles-A2BKHHMJ.css"
+        "/scoundrels/styles-AYVXT7RU.css"
       ],
       "patterns": []
     },
@@ -28,16 +28,12 @@
         "ignoreVary": true
       },
       "urls": [
-        "/scoundrels/icons/icon-128x128.png",
-        "/scoundrels/icons/icon-144x144.png",
-        "/scoundrels/icons/icon-152x152.png",
-        "/scoundrels/icons/icon-192x192.png",
-        "/scoundrels/icons/icon-384x384.png",
-        "/scoundrels/icons/icon-512x512.png",
-        "/scoundrels/icons/icon-72x72.png",
-        "/scoundrels/icons/icon-96x96.png",
+        "/scoundrels/icons/android-chrome-192x192.png",
+        "/scoundrels/icons/android-chrome-512x512.png",
+        "/scoundrels/icons/apple-touch-icon.png",
+        "/scoundrels/icons/favicon-16x16.png",
+        "/scoundrels/icons/favicon-32x32.png",
         "/scoundrels/media/Alegreya-JSGAVCRA.ttf",
-        "/scoundrels/media/CATSchmalfetteThannhaeuser-DS6PZY2Z.ttf",
         "/scoundrels/media/Kristy-XGXQPTBZ.otf",
         "/scoundrels/media/RobotoMono-VariableFont_wght-YL6RY2OQ.ttf"
       ],
@@ -46,24 +42,20 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/scoundrels/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
-    "/scoundrels/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
-    "/scoundrels/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
-    "/scoundrels/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
-    "/scoundrels/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
-    "/scoundrels/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
-    "/scoundrels/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
-    "/scoundrels/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
-    "/scoundrels/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/scoundrels/index.html": "2bba248626fb0f9716db3a042e7a2c6290999bd8",
+    "/scoundrels/favicon.ico": "6aeac2df9bd690394cd885e15e02ba14609b0ec6",
+    "/scoundrels/icons/android-chrome-192x192.png": "166854cec23e17354d30803de3decd625cb372f8",
+    "/scoundrels/icons/android-chrome-512x512.png": "02c50629c0898ea98a5606f5d6f1c3e3273bcbb2",
+    "/scoundrels/icons/apple-touch-icon.png": "8e72f27bcdae9bae3917db534cd5493a918b1e58",
+    "/scoundrels/icons/favicon-16x16.png": "18df394a47f1f56ae36bca4f21013efbf1c944f6",
+    "/scoundrels/icons/favicon-32x32.png": "a5e781a70da4b921822418464f8ced5f11b9e126",
+    "/scoundrels/index.html": "d9a2c9f4603245a94938522af12605e95dbc9080",
     "/scoundrels/main-QU4U6I2T.js": "3484051ea740d65069129b74088e7155d37e2371",
-    "/scoundrels/manifest.webmanifest": "bcfe28913f8b3e6d9fb58a0f190d9707c47acef1",
+    "/scoundrels/manifest.webmanifest": "64625ed7569a58ba90a0d395116314f9b9da1f9f",
     "/scoundrels/media/Alegreya-JSGAVCRA.ttf": "6609880948728419617455150aea67982b0319c1",
-    "/scoundrels/media/CATSchmalfetteThannhaeuser-DS6PZY2Z.ttf": "86b01de1a3bf84b98da42bbcad7a5b303cfc0f16",
     "/scoundrels/media/Kristy-XGXQPTBZ.otf": "504c69a08b74ee1a4581f8ab37e52c06758b101e",
     "/scoundrels/media/RobotoMono-VariableFont_wght-YL6RY2OQ.ttf": "49b4d9fac9359dbe93549548dcf74141e491ad6f",
     "/scoundrels/polyfills-SCHOHYNV.js": "d45c76c5960bab3ace7fd6d211b9579456241f8a",
-    "/scoundrels/styles-A2BKHHMJ.css": "97d430bf25723562256874f5c5f66d051265d01f"
+    "/scoundrels/styles-AYVXT7RU.css": "7e4a965263cba18f3a011095ce9be9ffe217d252"
   },
   "navigationUrls": [
     {
