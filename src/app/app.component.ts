@@ -4,6 +4,7 @@ import { ScoundrelGeneratorComponent } from "./scoundrel-generator/scoundrel-gen
 import { DevilGeneratorComponent } from "./devil-generator/devil-generator.component";
 import { NgClass, TitleCasePipe } from '@angular/common';
 import { ThemeService } from '../_services/theme.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -23,10 +24,15 @@ export class AppComponent implements OnInit {
 
   constructor(
     private theme: ThemeService,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
-      
+    this.changeTitle();
+  }
+
+  changeTitle() {
+    this.titleService.setTitle(this.currentSection === 'scoundrel' ? 'what scoundrel lurches?' : 'what devil dwells?');
   }
 
   copyToClipboard() {
@@ -54,6 +60,7 @@ export class AppComponent implements OnInit {
 
   swapSection(chosenSection: string) {
     this.currentSection = chosenSection;
+    this.changeTitle();
     this.copied = false;
   }
 }
