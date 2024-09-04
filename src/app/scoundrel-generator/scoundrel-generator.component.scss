@@ -1,0 +1,110 @@
+$blades-grey: #282a2c;
+$white: darken(white, 10%);
+
+.scoundrel-layout {
+    grid-template-rows: repeat(6, min-content) 1fr;
+    grid-template-areas:
+        "header"
+        "reroll"
+        "identity"
+        "looks"
+        "goals"
+        "quirks"
+        "credits";
+
+    header {
+        grid-area: header;
+        margin-bottom: 1rem;
+    }
+
+    #reroll {
+        grid-area: reroll;
+    }
+    #identity {
+        grid-area: identity;
+        div.border-top {
+            text-align: center;
+        }
+    }
+    #looks {
+        grid-area: looks;
+    }
+    #goals {
+        grid-area: goals;
+    }
+    #quirks {
+        grid-area: quirks;
+    }
+    section#credits {
+        grid-area: credits;
+        place-self: end center;
+        strong {
+            font-size: 1rem;
+        }
+    }
+
+    &.pale {
+        em {
+            color: #0d0d0d;
+        }
+        .border-top {
+            border-color: #0d0d0d;
+        }
+    }
+}
+
+// TABLET
+@media only screen and (min-width: 768px) {
+    .scoundrel-layout {
+        grid-gap: 0rem;
+        max-width: 95%;
+        margin-left: 0;
+        margin-right: auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, min-content) 1fr;
+        grid-template-areas:
+        "header     header"
+        "reroll     reroll"
+        "identity   identity"
+        "looks      looks"
+        "goals      quirks"
+        "credits    credits";
+
+        .content-info-section, section {
+            margin-top: 1rem;
+        }
+
+        .border-top {
+            padding: 1rem 0 0 0;
+        }
+
+        div#goals-info-section.border-top {
+            padding-right: 1rem;
+            border-right: 2px solid lighten($blades-grey, 50%);
+        }
+
+        div#quirks-info-section.border-top {
+            padding-left: 1rem;
+        }
+
+        section#credits {
+            .credits-button-section {
+                flex-direction: row;
+                place-self: center;
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width: 1440px) {
+    .scoundrel-layout {
+        max-width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1441px) {
+    .scoundrel-layout {
+        margin: auto;
+    }
+}

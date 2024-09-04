@@ -1,0 +1,43 @@
+.devil-layout {
+    grid-template-areas:
+        "header"
+        "reroll"
+        "identity";
+
+    header {
+        grid-area: header;
+        margin-bottom: 1rem;
+    }
+
+    #reroll {
+        grid-area: reroll;
+    }
+
+    #identity {
+        grid-area: identity;
+        div.border-top {
+            text-align: center;;
+        }
+    }
+}
+
+// TABLET
+@media only screen and (min-width: 768px) {
+    .devil-layout {
+        max-width: 95%;
+        margin-left: 0;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .devil-layout {
+        max-width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1441px) {
+    .devil-layout {
+        margin: auto;
+    }
+}

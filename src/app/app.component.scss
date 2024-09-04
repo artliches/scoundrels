@@ -1,205 +1,100 @@
 $blades-grey: #282a2c;
 $white: darken(white, 10%);
 
-h1 {
-    letter-spacing: 0.3rem;
-    font-size: 3rem;
-    margin-bottom: 0;
-    text-align: center;
-}
-
-h2 {
-    font-size: 1rem;
-    margin: 0;
-    font-weight: 100;
-}
-
-.center-text {
-    text-align: center;
-}
-
-.kristy-font {
-    font-family: "Kristy";
-}
-
-.left-margin {
-    margin-left: 0.2rem;
-}
-
-em {
-    color: lighten($blades-grey, 50%);
-}
-
-.clickable {
-    background-color: $blades-grey;
+a {
+    text-decoration: none;
     color: $white;
-    cursor: pointer;
-    user-select: none;
-    padding: 0.1rem 0.5rem;
+    background-color: $blades-grey;
     &:hover {
         background-color: red;
     }
 }
 
-.scoundrel-grid {
-    max-width: 95%;
-    min-height: 100vh;
-    display: grid;
-    grid-gap: 1rem;
-    place-content: start center;
-    place-items: center;
-    margin: auto;
-    font-size: 1.5rem;
-    grid-template-rows: repeat(6, min-content) 1fr;
-    grid-template-areas:
-        "header"
-        "reroll"
-        "identity"
-        "looks"
-        "goals"
-        "quirks"
-        "credits";
+.chosenSection {
+    background-color: red;
+}
 
-    section:not(#credits) {
-        place-self: start;
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.generator-layout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .navigation-layout {
+        position: fixed;
         width: 100%;
-    }
-
-    header {
-        grid-area: header;
-        margin-bottom: 1rem;
-    }
-
-    #reroll {
-        grid-area: reroll;
-    }
-    #identity {
-        grid-area: identity;
-        div.border-top {
-            text-align: center;
-        }
-    }
-    #looks {
-        grid-area: looks;
-    }
-    #goals {
-        grid-area: goals;
-    }
-    #quirks {
-        grid-area: quirks;
-    }
-    section#credits {
-        grid-area: credits;
-        place-self: end center;
-        :not(strong) {
-            font-size: 1rem;
-        }
-        strong.center-text {
-            max-width: max-content;
-            place-self: center;
-        }
-        a {
-            text-decoration: none;
-            color: $white;
-            background-color: $blades-grey;
-            &:hover {
-                background-color: red;
-            }
-        }
-        .credits-button-section {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-    }
-
-    .content-info-section {
         display: flex;
-        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: $blades-grey;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    .body-section {
+        padding-top: 4rem;
+    }
+    .credits-section {
+        text-align: center;
         align-items: center;
-        em {
-            font-size: 1rem;
-            text-align: center;
+        padding: 1rem;
+        .center-text {
+            width: max-content;
         }
-    }
-
-    .border-top {
-        border-top: 2px solid lighten($blades-grey, 50%);
-        padding-top: 1rem;
-    }
-
-    &.pale {
-        em {
-            color: #0d0d0d;
-        }
-        .border-top {
-            border-color: #0d0d0d;
-        }
-    }
-
-    .flex-row {
-        display: flex;
-        flex-direction: row;
-        gap: .2rem;
-    }
-
-    .flex-column {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
     }
 }
 
 // TABLET
 @media only screen and (min-width: 768px) {
-    .scoundrel-grid  {
-        max-width: 85%;
-        margin: auto;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, min-content) 1fr;
-        grid-template-areas:
-        "header     header"
-        "reroll     reroll"
-        "identity   identity"
-        "looks      looks"
-        "goals      quirks"
-        "credits    credits";
-
-        section#credits {
-            .credits-button-section {
-                flex-direction: row;
-                place-self: center;
-            }
+    .generator-layout {
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: min-content 1fr;
+        grid-template-rows: min-content 1fr;
+        grid-template-areas: 
+            "nav        body"
+            "credits    credits";
+        .navigation-layout {
+            position: unset;
+            grid-area: nav;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+            background-color: unset;
+            text-align: start;
+            padding: 0 0.5rem 0 0;
         }
-    }
-    h1 {
-        font-size: 4rem;
+        .body-section {
+            padding-top: 0rem;
+            grid-area: body;
+        }
+        .credits-section {
+            grid-area: credits;
+        }
+
     }
 }
+
 // SMALL LAPTOP
 @media only screen and (min-width: 1024px) {
-    .scoundrel-grid {
-        max-width: 75%;
-    }
-    h1 {
-        font-size: 4.5rem;
+    .generator-layout {
+        max-width: 85%;
+        margin: auto;
     }
 }
 
 @media only screen and (min-width: 1366px) {
-    h1 {
-        font-size: 3.4rem;
+    .generator-layout {
+        max-width: 100%;
+        margin: unset;
     }
 }
 
-@media only screen and (min-width: 1440px) {
-    .scoundrel-grid {
-        max-width: 69%;
-    }
-}
-
-@media only screen and (min-width: 1680px) {
-    .scoundrel-grid {
-        max-width: 53%;
+@media only screen and (min-width: 1441px) {
+    .generator-layout {
+        max-width: 85%;
+        margin: auto;
     }
 }

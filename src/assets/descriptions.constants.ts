@@ -1,3 +1,26 @@
+export const SCOUNDREL_ENTRANCES = [
+    'From the filthy streets of Duskvol',
+    'From around the corner',
+    'Emerging from the mists',
+    'Sprinting at full speed',
+    'Drawing a blade with ill-intent',
+    'Hand on a hidden pistol',
+    'Staring at you sternly'
+];
+
+export const DEVIL_ENTRANCES = [
+    'Your blood freezes in your veins as',
+    'Blood trickles from your nose, eyes, and ears as',
+    'A scream dies in your throat as',
+    'Your jaw clenches to the point of breaking as',
+    'Your hands spasm uncontrollably as',
+    'Your every instinct screams at you "RUN!" as',
+    'Your mind is flooded with euphoria as',
+    'You witness your own death thousands of times as',
+    'A prophesy of destruction is burned into your mind as',
+    'You uncontrollably whisper prayers backwards as',
+];
+
 export const NAMES_FIRST = [
     'Adric',
     'Aldo',
@@ -602,4 +625,207 @@ export const QUIRKS = [
     'the legion of spirits that curse and hound them',
     'their intense phobia',
     'their detailed records in the form of journals',
+];
+
+export const DEMON_NAMES = [
+    'Korvaeth',
+    'Sevraxis',
+    'Argaz',
+    'Zalvroxos',
+    'Kethtera',
+    'Akeveron',
+    'Ixis',
+    'Kyronax',
+    'Voldranai',
+    'Esketra',
+    'Ardranax',
+    'Kylastra',
+    'Oryxus',
+    'Ahazu',
+    'Tyraxis',
+    'Azarax',
+    'Vaskari',
+];
+
+export const GODS = [
+    'The One Within Many',
+    'The Silver Fire',
+    'The Rapturous Chord',
+    'The Fallen Star',
+    'The Lord of the Depths',
+    'The Silent Song',
+    'The Lady of Thorns',
+    'Our Blood Spilled in Glory',
+    'The Ram',
+    'The Empty Vessel',
+    'The Closed Eye',
+    'The Hand of Sorrow',
+    'That Which Hungers',
+    'The Thousand Faces',
+    'The Web of Pain',
+    'The Pillars of Night',
+    'The Burned King',
+    'The Father of the Abyss',
+    'The Forsaken Legion',
+    'The Unbroken Sun',
+    'The Revelation',
+    'The Radiant Word',
+    'The Shrouded Queen',
+    'The Reconciler',
+    'The Cloud of Woe',
+    'The Broken Circle',
+    'The Conquerer',
+    'She Who Slays in Darkness',
+    'The Dream Beyond Death',
+    'The Blood Dimmed Tide',
+    'The Guardian of the Gates',
+    'The Maw of the Void',
+    'The Keeper of the Flame',
+    'The Throne of Judgement',
+    'The Lost Crown',
+    'The Golden Stag',
+    'The Sword of Hate',
+    'The Breaker of Infinities'
+];
+
+export const DEVIL_FORM = [
+    'human',
+    'beast',
+    'horror',
+];
+
+export const HUMAN_AFFINITY = [
+    'the ever-weeping ink that flows from their eyes',
+    'flames flare to life while bulbs pop from their overwhelming power',
+    'flames sputter and die while bulbs flicker pathetically from the pure entropy pouring from them',
+    'mechanisms grind to a halt as if in mute horror',
+    'the bone-breaking chill that instantly freezes all liquid around them',
+    'the skin-searing heat that sends all liquids into a hissing boil',
+    'the copper taste in your mouth as all liquid is turned to blood in their presence',
+    'ink water begins to slowly flood around them as if the ocean has finally come to claim the land',
+    'corpses long dead erupt from the ground beneath their feet as if to spare the earth of their touch',
+    'the multiple swords driven through their chest, back to front',
+    'their hands and feet are charred, yet burn with embers within',
+    'smoke issues from their mouth, concealing their face',
+    'the gale force winds that whip around them',
+];
+
+export const BEAST_AFFINITY = [
+    'ever-weeping ink that flows from its eyes',
+    'flames flaring to life while bulbs pop from its overwhelming power',
+    'flames sputtering and dying while bulbs flicker pathetically from the pure entropy pouring from it',
+    'mechanisms grinding to a halt as if in mute horror',
+    'a bone-breaking chill that instantly freezes all liquid around it',
+    'a skin-searing heat that sends all liquids into a hissing boil',
+    'a copper taste in your mouth as all liquid is turned to blood in its presence',
+    'ink water slowly flooding around it as if the ocean has finally come to claim the land',
+    'corpses long dead erupting from the ground beneath its feet as if to spare the earth of its touch',
+    'multiple swords driven through its chest, back to front',
+    'charred limbs that burn with embers within',
+    'smoke issuing from its mouth, concealing its face',
+    'gale force winds that whip around it',
+];
+
+export const BEAST_FORMS = [
+    'eyeless wolf with bristling fur',
+    'impossibly long serpent with three heads',
+    'oozing slug that shimmers with prismatic colors',
+    'crow with seven wings, seven eyes, and seven feet',
+    'praying mantis with two sets of scything arms',
+    'prowling tiger with ever-shifting stripes',
+    'blood-sucking bat with jaws that split vertically',
+    'owl with a cluster of mismatched eyes',
+    'floating octopus with grasping talons on its suckers',
+    'gaunt horse with fanged jaws that open impossibly wide',
+    'goat with curling horns and fur so black that it absorbs all light',
+    'palid whale with hundreds of scalet eyes'
+];
+
+export const HORROR_FORMS = [
+    'mass of reeking tar',
+    'mass of writhing limbs',
+    'floating collection of crysalline shards',
+    'roiling mass of creeping growth',
+    'animated stone gargoyle that moves stiltedly',
+    'cloud of burning ashes',
+    'swarm of biting insects',
+    'flayed humanoid of unknown origin',
+    'collection of shambling rags',
+    'ever-shifting mass of impossible geometry',
+    'orbiting collection of shimmering spheres',
+    'humanoid skeleton of black volcanic glass',
+    'twisted and broken machinery cobbled together',
+    'pulsing psychic mist',
+    'shards of glass that move through the ground like a shark'
+];
+
+export const HORROR_AFFINITY = [
+    'flames to flare to life while bulbs pop from its overwhelming power',
+    'flames to sputter and die while bulbs flicker pathetically from the pure entropy pouring from it',
+    'mechanisms to grind to a halt as if in mute horror',
+    'a bone-breaking chill that instantly freezes all liquid around it',
+    'a skin-searing heat that sends all liquids into a hissing boil',
+    'a copper taste in your mouth as all liquid is turned to blood in its presence',
+    'ink water to slowly flood around it as if the ocean has finally come to claim the land',
+    'gale force winds that whip around it',
+    'intense magnetism that threatens to rip all metal from your person',
+    'visions of a violent past to dance around it',
+    'visions of a cold, dead future that surround it',
+    'intense strobing lights that overwelm your senses'
+];
+
+export const DEVIL_DESIRES = [
+    'mayham, chaos and total unheaval of the status quo',
+    'the brutal and public murder of a certain individual',
+    'justice for crimes esoteric and intelligible only to it',
+    'the corruption of a paragon of society',
+    'to gather worshipers to increase its demonic powers',
+    'to implant itself within society and puppet it from the shadows',
+    'knowledge esoteric and forbidden, warded from demonic meddling',
+    'pleasure at the expense of others',
+    'to inflict the most amount of suffering in the swiftest way possible',
+    'to manipulate the minds of the weak in order to incite a brutal war',
+    'revenge against a certain individual they interacted with in the past',
+    'freedom from some strange arcane shackles',
+    'to feast on the fear of all that behold it',
+    'to be recognized as the greatest woe that ever befell this plane of existence',
+    'to carve a bloody path through the world, leaving only a single survivor'
+];
+
+export const WORSHIP = [
+    'sacrafice your fellow man to specially consecreated beasts',
+    'consume the flesh of an annointed human sacrafice in their name',
+    'fight to the death against their anointed champion in a death arena',
+    'offer a blood sacrafice upon their hidden altar',
+    'progressively overdose a victim of your choosing with drugs of the devils choosing',
+    'ritualistically kill a human so they may serve it as a spirit-champion',
+    'slay a swath of humans through arcane means',
+    'take part in an orgy of pleasure and pain in equal parts',
+    'sequester yourself in the dark for a day and night while reciting hymns unceasingly',
+    'meditate upon a sacred nexus during an astrological confluence',
+    'undertake a pilgramage to a sacred place in the deathlands',
+    'undertake a voyage to a set of sacred coordinates at sea',
+    'bring it a collection of eyes from enemy mystics',
+    'bring it the heart of an enemy demon',
+    'bring it the blood of a vampyr',
+    'deliver it the shards of a sacred skull',
+    'deliver it the shards of a corrupted sword',
+    'deliver it the shards of a long-lost jewel',
+    'bring it the original writings of the first mystic to summon it',
+    'bring it the severed hands of heretics to its beliefs',
+    'capture and deliver the ghost of an ancient enemy',
+    'rituallistically burn writs chronicalling of the demons weaknesses',
+    'break varied seals that bind the demon to this place',
+    'shatter the hidden altar of an enemy order',
+    'melt down a sacred sword that can deal a mortal wound to the demon',
+    'purify yourself in sanctified blood',
+    'purify the magic circle that serves as the gate allowing the demon entry',
+    'bless an acolyte of the demon in a spiritual well',
+    'create arcane wards to guard sites sacred to the demon',
+    'debase a sworn nemesis publically',
+    'corrupt the sacred sites of an enemy faction',
+    'perform a debased ritual in mockery of an enemy',
+    'manipulate the the sacred orders of this place to feed power to the demon',
+    'corrupt the acolytes of an enemy order to transform them into thralls',
+    'burn and destroy as much as you can in as little time as possible'
 ];

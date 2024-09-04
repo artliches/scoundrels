@@ -1,0 +1,71 @@
+<div class="devil-layout generator-grid {{whatTheme}}">
+    <header class="content-info-section">
+        <h1 class="kristy-font">WHAT DEVIL DWELLS?</h1>
+        <span class="info-section">
+            <em><span class="rotate-arrow">&#8626;</span>randomized devils compatible with <span class="kristy-font">BLADES IN THE DARK</span></em>
+          </span>
+    </header>
+
+    <div id="reroll" class="content-info-section">
+        <strong class="clickable center-text" (click)="rerollAll()">SOME NEW DEVIL DWELLS</strong>
+        <em><span class="rotate-arrow">&#8626;</span>click to re-roll all</em>
+    </div>
+
+    <section id="identity">
+        <h2><em>identity</em></h2>
+        <div #identityClip class="border-top">
+            {{ introObj.descrip }} <strong (click)="rerollName()" class="clickable">{{ nameObj.descrip }}</strong>, <strong (click)="rerollTitle()" class="clickable">{{ titleObj.descrip }}</strong> erupts into existence.
+        </div>
+    </section>
+
+    <section id="looks">
+        <h2><em>looks</em></h2>
+        <div #looksClip class="border-top flex-column">
+            <span>
+                They appear in the form of
+                @if (formObj.descrip === 'human') {
+                    @if (humanLookObj.descrip === 'concealed' || humanLookObj.descrip === 'ambiguous') {
+                        {{ humanLookObj.descrip.match('^[aieoAIEO].*') ? 'an' : 'a' }} 
+                        <strong class="clickable" (click)="rerollHumanLook()">{{ humanLookObj.descrip }}</strong> 
+                        <strong (click)="rerollForm()" class="clickable">{{ formObj.descrip }}</strong>
+                        with a <strong (click)="rerollHumanBuild()" class="clickable">{{ humanBuildObj.descrip }}</strong> build and
+                        <strong class="clickable" (click)="rerollSkin()">{{ skinObj.descrip }}</strong> skin.
+
+                    } @else {
+                        {{ humanBuildObj.descrip.match('^[aieoAIEO].*') ? 'an' : 'a' }} 
+                        <strong (click)="rerollHumanBuild()" class="clickable">{{ humanBuildObj.descrip }}</strong> 
+                        <strong (click)="rerollForm()" class="clickable">{{ formObj.descrip }}</strong> 
+                        <strong class="clickable" (click)="rerollHumanLook()">{{ humanLookObj.descrip }}</strong>
+                        with <strong class="clickable" (click)="rerollSkin()">{{ skinObj.descrip }}</strong> skin.
+                    }
+                    <div class="top-margin">
+                        A dead giveaway that this is no mere human is their <strong (click)="rerollTycherosiDistinguish()" class="clickable">{{ tycherosiObj.descrip }}</strong> and 
+                        <strong class="clickable" (click)="rerollAffinity('human')">{{ affinityObj.descrip }}</strong>.
+                    </div>
+                } @else if (formObj.descrip === 'beast') {
+                    an enormous <strong (click)="rerollForm()" class="clickable">{{ formObj.descrip }}</strong> like {{ beastFormObj.descrip.match('^[aieoAIEO].*') ? 'an' : 'a' }}
+                    <strong (click)="rerollBeastForm()" class="clickable">{{ beastFormObj.descrip }}</strong>.
+
+                    <div class="top-margin">
+                        Its demonic origin is further emphasized by <strong class="clickable" (click)="rerollAffinity('beast')">{{ affinityObj.descrip }}</strong>.
+                    </div>
+                } @else if (formObj.descrip === 'horror') {
+                    a <strong (click)="rerollForm()" class="clickable">strange and disturbing anomaly</strong> that can only be described as {{ horrorFormObj.descrip.match('^[aieoAIEO].*') ? 'an' : 'a' }} <strong class="clickable" (click)="rerollHorrorForm()">{{ horrorFormObj.descrip }}</strong>.
+                    <div class="top-margin">
+                        This affront to nature also causes <strong class="clickable" (click)="rerollAffinity()">{{ affinityObj.descrip }}</strong>.
+                    </div>
+                }
+            </span>
+        </div>
+    </section>
+
+    <section id="desires">
+        <h2><em>desires & worship</em></h2>
+        <div #desireClip class="border-top">
+            {{ nameObj.descrip }} comes seeking <strong class="clickable" (click)="rerollDesires()">{{ desiresObj.descrip }}</strong>.
+            <div class="top-margin">
+                The devil offers you clemency if you <strong class="clickable" (click)="rerollWorship()">{{ worshipObj.descrip }}</strong>.
+            </div>
+        </div>
+    </section>
+</div>
